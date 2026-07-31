@@ -171,10 +171,11 @@ Plantillas para mantener consistencia entre documentos.
 
 | Sección | Estado |
 |---|---|
-| 00 Source | Disponible |
-| 01 Governance | En construcción (Fase 0.A) |
-| 02 Domain | Pendiente (Fase 0.B) |
-| 03 Architecture | Pendiente (Fase 0.C) |
+| 00 Source | ✅ Accepted |
+| 01 Governance | ✅ Accepted (ADR-001…014 + glosario) |
+| 02 Domain | ✅ Accepted — orden `01`→`12` ([guía](docs/02-domain/README.md)) |
+| 03 Architecture | ✅ Accepted — C4, Deployment, Modulith |
+| Guía de presentación | [docs/GUIA-PRESENTACION-00-03.md](docs/GUIA-PRESENTACION-00-03.md) |
 | 04 Data | Pendiente (Fase 0.D) |
 | 05 Contracts | Pendiente (Fase 0.E) |
 | 06 Security | Pendiente (Fase 0.F) |

@@ -1,27 +1,74 @@
-# 02. Domain
+# 02. Domain — Guía de revisión
 
-Modelo de dominio de la Plataforma Central de Seguridad.
+| Campo | Valor |
+|---|---|
+| Fase | **0.B** |
+| Estado | **Accepted (v1.0)** |
+| Cómo revisar | Abre los archivos **en orden numérico** (`01` → `12`). En el explorador de Cursor ya aparecen ordenados. |
+| Diagramas | Carpeta [`diagrams/`](diagrams/) — autoridad visual |
 
-## Propósito
+---
 
-Definir el lenguaje compartido, los bounded contexts, las reglas de negocio y los casos de uso del camino crítico antes de dibujar arquitectura de sistema o modelo físico de datos.
+## Orden de lectura (scroll / archivo siguiente)
 
-## Contenido esperado
+Lee de arriba abajo. Cada archivo tiene al final enlaces **← Anterior | Siguiente →**.
 
-| Artefacto | Descripción | Estado |
-|---|---|---|
-| [ubiquitous-language.md](ubiquitous-language.md) | Lenguaje ubicuo (referencia al glosario) | Stub |
-| [bounded-contexts.md](bounded-contexts.md) | Contextos delimitados | Stub |
-| [context-map.md](context-map.md) | Mapa de contextos | Stub |
-| [event-storming.md](event-storming.md) | Resultado del Event Storming | Stub |
-| [business-rules.md](business-rules.md) | Reglas de negocio | Stub |
-| [invariants.md](invariants.md) | Invariantes con identificador | Stub |
-| [use-cases.md](use-cases.md) | Casos de uso del camino crítico | Stub |
-| [aggregates.md](aggregates.md) | Agregados (diseño táctico; posterior a 0.B) | Stub |
-| [entities.md](entities.md) | Entidades | Stub |
-| [value-objects.md](value-objects.md) | Value Objects | Stub |
-| [domain-events.md](domain-events.md) | Eventos de dominio | Stub |
+| # | Archivo | Qué aporta | Tiempo approx. |
+|---|---|---|---|
+| 1 | [01-validation-application.md](01-validation-application.md) | App real del MVP, admin, ABAC/REBAC dirección | 5 min |
+| 2 | [02-ubiquitous-language.md](02-ubiquitous-language.md) | Vocabulario y estados canónicos | 5 min |
+| 3 | [03-bounded-contexts.md](03-bounded-contexts.md) | Los 11 BC + enlace a diagramas | 10 min |
+| 4 | [04-context-map.md](04-context-map.md) | Ownership y dependencias prohibidas | 8 min |
+| 5 | [05-event-storming.md](05-event-storming.md) | Flujo crítico ALLOW/DENY/INDETERMINATE | 10 min |
+| 6 | [06-invariants.md](06-invariants.md) | Condiciones que el sistema no puede violar | 8 min |
+| 7 | [07-business-rules.md](07-business-rules.md) | Reglas de negocio trazables | 8 min |
+| 8 | [08-use-cases.md](08-use-cases.md) | UC-01…06 camino crítico | 15 min |
+| 9 | [09-domain-events.md](09-domain-events.md) | Eventos de dominio vs auditoría | 5 min |
+| 10 | [10-entities.md](10-entities.md) | Índice de entidades → PNG por BC | 10 min |
+| 11 | [11-aggregates.md](11-aggregates.md) | Fronteras de agregados (candidatos Accepted) | 5 min |
+| 12 | [12-value-objects.md](12-value-objects.md) | VOs / shared kernel (candidatos Accepted) | 5 min |
 
-## Fase
+### Diagramas (ver en paralelo, no al final)
 
-Corresponde a la **Fase 0.B** del plan de línea base. Los artefactos de diseño táctico (agregados, entidades, VOs) se completan después de validar el primer caso de uso de referencia.
+| Cuándo | Diagrama |
+|---|---|
+| Con el paso 3 | [diagrams/01-big-picture.png](diagrams/01-big-picture.png) |
+| Con el paso 3–4 | [diagrams/02-bounded-contexts.png](diagrams/02-bounded-contexts.png) |
+| Con el paso 10 | [diagrams/models/](diagrams/models/) (01…11) |
+
+---
+
+## Mapa mental de la carpeta
+
+```text
+01 App de validación     →  contexto de negocio del MVP
+02 Lenguaje              →  cómo se habla
+03–04 BC + Context Map   →  cómo se parte el dominio
+05 Event Storming        →  qué pasa en runtime
+06–08 Invariantes/Reglas/UC →  qué debe cumplirse
+09–12 Eventos/Entidades/Agg/VO →  inventario de modelo
+```
+
+---
+
+## Los 11 Bounded Contexts (atajo)
+
+| BC | Módulo Modulith |
+|---|---|
+| Tenants | `tenants` |
+| Aplicaciones | `aplicaciones` |
+| Recursos | `recursos` |
+| Roles | `roles` |
+| Perfiles | `perfiles` |
+| Usuarios | `usuarios` |
+| Identidad y autenticación | `identidad` |
+| Asignaciones | `asignaciones` |
+| Políticas de acceso | `politicas` |
+| Autorización | `autorizacion` |
+| Auditoría de seguridad | contenedor propio |
+
+Detalle: [03-bounded-contexts.md](03-bounded-contexts.md) · Módulos: [`../03-architecture/modulith-dependency-map.md`](../03-architecture/modulith-dependency-map.md)
+
+---
+
+**Empezar revisión →** [01-validation-application.md](01-validation-application.md)

@@ -18,4 +18,4 @@ La autenticación es **delegada**. La plataforma valida y normaliza evidencia de
 ## Consecuencias
 
 - Adaptador de identidad obligatorio.
-- El proveedor concreto del MVP queda pendiente (pregunta §21.2) y se cerrará con ADR posterior.
+- El proveedor concreto del MVP se cerró en **[ADR-013](ADR-013-keycloak-idp.md)** (Keycloak self-hosted). La arquitectura permanece agnóstica al IdP.

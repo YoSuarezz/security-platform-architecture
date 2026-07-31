@@ -2,7 +2,7 @@
 
 > **Autoridad de nombres** del proyecto. Derivado del glosario del Documento Base (§23).  
 > Toda documentación, diagrama, política Rego, evento y campo de datos debe usar estos términos.  
-> Estado: `Approved` (congelado como referencia inicial; se amplía solo mediante ADR o actualización controlada).
+> Estado: `Accepted` (v1.0 — se amplía solo mediante ADR o actualización controlada).
 
 | Término | Definición en este proyecto |
 |---|---|
@@ -30,6 +30,15 @@
 | Spring Modulith | Marco usado para organizar el proyecto en módulos internos verificables, alineados con capacidades de negocio. |
 | SurrealDB | Base de datos principal decidida para la plataforma; se usará para datos y relaciones de seguridad. |
 | Tenant | Límite organizacional o de aislamiento lógico para datos y autorizaciones. |
+| Usuarios (BC) | Contexto del sujeto de dominio interno; distinto de Identidad y autenticación. |
+| Identidad y autenticación (BC) | Contexto que valida/normaliza evidencia del IdP (sesión, claims); no autoriza. |
+| Autorización (BC) | Contexto de evaluación `SolicitudAcceso` → OPA → `DecisionAcceso` → `EventoAcceso`. |
+| Políticas de acceso (BC) | Catálogo/metadatos/versión de políticas; no sustituye a OPA como motor. |
+| Perfiles (BC) | Agrupación de roles para facilitar asignación; distinto de Roles y de Asignaciones. |
+| Keycloak | IdP del MVP (self-hosted); OIDC/OAuth2. La arquitectura permanece agnóstica al proveedor (ADR-013). |
+| Administrador de Seguridad | Único rol administrativo de la plataforma en el MVP; gestiona tenants, apps, recursos, roles, perfiles, asignaciones, políticas y consulta auditoría. |
+| Gestión Académica Universitaria | Primera aplicación de validación del MVP (`gestion-academica`); dominio educación superior; cada universidad es un tenant. |
+| Deny-by-default | Semántica: sin política aplicable ⇒ DENY; deny explícito gana sobre allow (ADR-012). |
 
 ## Regla de cambio
 
