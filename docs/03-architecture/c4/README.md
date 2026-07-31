@@ -31,11 +31,11 @@
 
 | Contenedor | Stack | Responsabilidad clave |
 |---|---|---|
-| PEP | Spring Boot + WebFlux | Intercepta, normaliza `SolicitudAcceso`, aplica `DecisionAcceso` |
-| PDP | Spring Boot + WebFlux + Modulith (11 módulos) | Orquesta: único acceso a OPA / SurrealDB / IdP |
+| PEP | Spring Boot + WebFlux + **Modulith** | Intercepta, normaliza `SolicitudAcceso`, aplica `DecisionAcceso` |
+| PDP | Spring Boot + WebFlux + **Modulith** (módulos por BC) | Orquesta: único acceso a OPA / SurrealDB / IdP |
 | OPA | Proceso OPA + Rego | Evalúa políticas sobre entrada normalizada |
 | SurrealDB | SurrealDB | Fuente de verdad: identidades, tenants, roles, recursos, asignaciones, políticas, referencias de auditoría |
-| Auditoría | Spring Boot + WebFlux | Recibe `EventoAcceso`, persiste evidencia correlacionada, expone a Operación |
+| Auditoría | Spring Boot + WebFlux + **Modulith** | Recibe `EventoAcceso`, persiste evidencia correlacionada, expone a Operación |
 
 ### L3 PEP — Componentes
 
@@ -61,4 +61,8 @@
 
 ## Relación con el Mapa de módulos
 
-Los 11 módulos de [`../modulith-dependency-map.md`](../modulith-dependency-map.md) viven dentro del **PDP**. El Constructor de contexto de autorización es el componente que más módulos consulta (identidad, asignaciones, recursos, aplicaciones, tenants, políticas) — siempre a través de sus APIs públicas, nunca de sus internals.
+Spring Modulith aplica a **PEP, PDP y Auditoría** ([ADR-009](../../01-governance/adr/ADR-009-spring-modulith.md)). Detalle: [`../modulith-dependency-map.md`](../modulith-dependency-map.md).
+
+- En el **PDP**, los módulos alinean a Bounded Contexts de negocio; el Constructor de contexto consulta APIs públicas (nunca internals).
+- En el **PEP**, los módulos son capacidades de enforcement (`ingress`, `normalization`, `decision-client`, `enforcement`).
+- En **Auditoría**, los módulos cubren ingesta, consulta y retención.

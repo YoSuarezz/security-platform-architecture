@@ -53,19 +53,21 @@ Lee de arriba abajo. Cada archivo tiene al final enlaces **← Anterior | Siguie
 
 ## Los 11 Bounded Contexts (atajo)
 
-| BC | Módulo Modulith |
+| BC | Dónde vive en Modulith |
 |---|---|
-| Tenants | `tenants` |
-| Aplicaciones | `aplicaciones` |
-| Recursos | `recursos` |
-| Roles | `roles` |
-| Perfiles | `perfiles` |
-| Usuarios | `usuarios` |
-| Identidad y autenticación | `identidad` |
-| Asignaciones | `asignaciones` |
-| Políticas de acceso | `politicas` |
-| Autorización | `autorizacion` |
-| Auditoría de seguridad | contenedor propio |
+| Tenants | PDP · `tenants` |
+| Aplicaciones | PDP · `aplicaciones` |
+| Recursos | PDP · `recursos` |
+| Roles | PDP · `roles` |
+| Perfiles | PDP · `perfiles` |
+| Usuarios | PDP · `usuarios` |
+| Identidad y autenticación | PDP · `identidad` |
+| Asignaciones | PDP · `asignaciones` |
+| Políticas de acceso | PDP · `politicas` |
+| Autorización | PDP · `autorizacion` (+ PEP módulos de enforcement) |
+| Auditoría de seguridad | Contenedor **Auditoría** · Modulith (`ingestion`, `query`, `retention`) |
+
+> Modulith también organiza el **PEP** (capacidades de enforcement), no solo el PDP — [ADR-009](../01-governance/adr/ADR-009-spring-modulith.md).
 
 Detalle: [03-bounded-contexts.md](03-bounded-contexts.md) · Módulos: [`../03-architecture/modulith-dependency-map.md`](../03-architecture/modulith-dependency-map.md)
 

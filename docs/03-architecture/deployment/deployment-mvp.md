@@ -52,9 +52,9 @@ graph TD
 
 | Servicio | Imagen base | Puerto expuesto | Puerto interno | Responsabilidad |
 |---|---|---|---|---|
-| `pep` | `eclipse-temurin:21` (app jar) | `8080` | `8080` | Interceptar, normalizar y aplicar decisión |
-| `pdp` | `eclipse-temurin:21` (app jar) | — (interno) | `8081` | Orquestar evaluación, único acceso a OPA/DB/IdP |
-| `auditoria` | `eclipse-temurin:21` (app jar) | — (interno) | `8082` | Persistir y exponer evidencia correlacionada |
+| `pep` | `eclipse-temurin:21` (app jar) | `8080` | `8080` | Interceptar, normalizar y aplicar decisión (Boot + WebFlux + **Modulith**) |
+| `pdp` | `eclipse-temurin:21` (app jar) | — (interno) | `8081` | Orquestar evaluación, único acceso a OPA/DB/IdP (Boot + WebFlux + **Modulith**) |
+| `auditoria` | `eclipse-temurin:21` (app jar) | — (interno) | `8082` | Persistir y exponer evidencia (Boot + WebFlux + **Modulith**) |
 | `opa` | `openpolicyagent/opa:latest-rootless` | — (interno) | `8181` | Evaluar Rego |
 | `surrealdb` | `surrealdb/surrealdb:latest` | — (interno) | `8000` | Datos del dominio de seguridad |
 | `keycloak` | `quay.io/keycloak/keycloak` | — (interno; admin UI opcional en lab) | `8083` | IdP OIDC/OAuth2 del MVP (ADR-013) |

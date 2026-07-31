@@ -11,7 +11,7 @@
 
 ## Principio
 
-Los contextos delimitados representan **capacidades de negocio** del dominio `Gestion Seguridad`, no capas técnicas. En implementación se proyectan a módulos Spring Modulith (pueden agruparse si el Dependency Map lo justifica; no se fusionan en el modelo de dominio sin ADR).
+Los contextos delimitados representan **capacidades de negocio** del dominio `Gestion Seguridad`, no capas técnicas. En implementación se proyectan a módulos Spring Modulith — principalmente en el **PDP**; el BC Auditoría es contenedor propio también Modulith; el **PEP** usa Modulith para capacidades de enforcement (sin catálogo). Ver [ADR-009](../01-governance/adr/ADR-009-spring-modulith.md) y el [Dependency Map](../03-architecture/modulith-dependency-map.md).
 
 ## Contextos (autoridad del diagrama)
 
@@ -44,13 +44,13 @@ El Documento Base agrupaba algunos de estos contextos (p. ej. Roles+Perfiles, Us
 
 ## Proyección tentativa a contenedores C4
 
-| Contenedor (C4 L2) | Contextos que orquesta / posee en runtime |
+| Contenedor (C4 L2) | Contextos / módulos Modulith |
 |---|---|
-| PEP | Parte de Autorización (interceptor / enforcement) — sin políticas ni datos |
-| PDP | Autorización (evaluación) + lectura de Usuarios/Identidad/Tenants/Apps/Recursos/Roles/Perfiles/Asignaciones/Políticas |
-| OPA | Ejecución de políticas (fuera del dominio de catálogo) |
+| PEP | Capacidad de Autorización en el borde (módulos Modulith: ingress, normalization, decision-client, enforcement) — sin políticas ni datos |
+| PDP | Autorización (evaluación) + módulos de Usuarios/Identidad/Tenants/Apps/Recursos/Roles/Perfiles/Asignaciones/Políticas |
+| OPA | Ejecución de políticas (fuera del dominio de catálogo; no Modulith) |
 | SurrealDB | Persistencia de los BC de catálogo + referencias de auditoría |
-| Servicio de auditoría | Auditoría de seguridad |
+| Servicio de auditoría | BC Auditoría — Modulith: ingestion, query, retention |
 
 ## Criterio de cierre
 

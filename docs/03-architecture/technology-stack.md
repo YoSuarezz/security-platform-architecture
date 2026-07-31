@@ -4,7 +4,7 @@
 |---|---|
 | Estado | Accepted (v1.0) |
 | Fase | 0.C |
-| ADRs | ADR-001…ADR-011 |
+| ADRs | ADR-001…ADR-014 |
 | Diagrama | [level2-containers.png](c4/level2-containers.png) |
 
 ## Confirmado
@@ -17,7 +17,7 @@
 | Persistencia | SurrealDB (SurrealQL) | ADR-003 |
 | Motor de políticas | OPA + Rego | ADR-004 |
 | Autenticación | Delegada (OIDC / OAuth 2.0) | ADR-005 |
-| Organización interna | Spring Modulith | ADR-009 |
+| Organización interna | Spring Modulith en **PEP, PDP y Auditoría** | ADR-009 |
 | Estilo | Clean Architecture / Hexagonal | ADR-008 |
 | Construcción | Cloud Native, Cloud Enable, 12-Factor, Clean Code, CI, tests >80% | ADR-010, ADR-011 |
 
@@ -25,11 +25,12 @@
 
 | Contenedor | Stack |
 |---|---|
-| PEP | Java, Spring Boot, WebFlux, cliente HTTP reactivo al PDP |
-| PDP | Java, Spring Boot, WebFlux, adaptadores IdP / SurrealDB / OPA / Auditoría |
+| PEP | Java, Spring Boot, WebFlux, **Modulith**, cliente HTTP reactivo al PDP |
+| PDP | Java, Spring Boot, WebFlux, **Modulith**, adaptadores IdP / SurrealDB / OPA / Auditoría |
 | OPA | Binario/imagen OPA, políticas Rego |
 | SurrealDB | Servidor SurrealDB |
-| Auditoría | Java, Spring Boot, WebFlux |
+| Auditoría | Java, Spring Boot, WebFlux, **Modulith** |
+| Keycloak | IdP OIDC/OAuth2 (MVP) |
 
 ## IdP del MVP (cerrado)
 

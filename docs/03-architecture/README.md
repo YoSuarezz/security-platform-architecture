@@ -38,7 +38,7 @@ Diseño de alto nivel del sistema — Plataforma Central de Seguridad.
 |---|---|
 | PEP y PDP separados (WebFlux) | C4 L2, ADR-002 |
 | Solo PDP habla con OPA / SurrealDB / Keycloak | C4 L2, ADR-013 |
-| 11 módulos Modulith + commons | modulith-dependency-map.md |
+| Modulith en PEP + PDP + Auditoría | modulith-dependency-map.md · ADR-009 |
 | Deployment: solo PEP expuesto | deployment-mvp.md |
 | HTTP 401/403/503 | ADR-014 |
 

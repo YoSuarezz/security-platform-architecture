@@ -17,6 +17,7 @@
 | C-06 | Contenedores desde el inicio; Cloud Enable | ADR-010 |
 | C-07 | PEP no implementa reglas complejas ni accede a SurrealDB/OPA | C4 L2/L3, §7.2 |
 | C-08 | Solo PDP accede a OPA y SurrealDB en el camino de decisión | C4 L2 |
+| C-08b | Spring Modulith obligatorio en PEP, PDP y Auditoría | ADR-009 |
 
 ## Restricciones de alcance (MVP)
 

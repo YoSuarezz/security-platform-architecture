@@ -41,7 +41,7 @@ Usuario final → Aplicaciones protegidas → PEP → PDP → OPA / SurrealDB / 
 - **Separación PEP/PDP** (decisión ≠ aplicación).
 - **Reactivo** (WebFlux) en PEP, PDP y Auditoría.
 - **Cloud Native / Cloud Enable / 12-Factor** (ADR-010).
-- **Modulith** a nivel de módulos de código dentro de los servicios Java (mapa pendiente).
+- **Modulith** en todos los contenedores Java (PEP, PDP, Auditoría) — ver [`modulith-dependency-map.md`](modulith-dependency-map.md) y ADR-009.
 
 ## Fuera de este overview
 

@@ -4,7 +4,8 @@ Registro formal de decisiones arquitectónicas.
 
 | Campo | Valor |
 |---|---|
-| Estado | Fase 0.A — Completo para decisiones confirmadas del Documento Base |
+| Estado | Accepted — ADR-001…014 profundizados (contexto, por qué, alternativas, consecuencias) |
+| Nota | Cada ADR documenta fundamentación completa; ADR-009 aplica Modulith a PEP, PDP y Auditoría |
 
 ## Índice
 
@@ -18,7 +19,7 @@ Registro formal de decisiones arquitectónicas.
 | [ADR-006](ADR-006-rbac-abac-rebac-pbac.md) | RBAC + ABAC + REBAC + PBAC combinables | Accepted |
 | [ADR-007](ADR-007-mandatory-audit.md) | Auditoría obligatoria | Accepted |
 | [ADR-008](ADR-008-hexagonal-clean-architecture.md) | Clean Architecture / Arquitectura Hexagonal | Accepted |
-| [ADR-009](ADR-009-spring-modulith.md) | Spring Modulith con 11 módulos | Accepted |
+| [ADR-009](ADR-009-spring-modulith.md) | Spring Modulith en PEP, PDP y Auditoría | Accepted |
 | [ADR-010](ADR-010-cloud-native-12factor.md) | Cloud Native / Cloud Enable / 12-Factor | Accepted |
 | [ADR-011](ADR-011-engineering-baseline.md) | Línea base de ingeniería (Git, CI, tests, Clean Code) | Accepted |
 | [ADR-012](ADR-012-policy-precedence.md) | Precedencia deny-by-default + deny explícito gana | Accepted |
