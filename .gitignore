@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary / local
+*.tmp
+*.bak
+*.log
+.env
+.env.*
+
+# Draw.io backups
+*.drawio.bkp
+~$*
+
+# Python / Node accidental artifacts
+__pycache__/
+node_modules/
