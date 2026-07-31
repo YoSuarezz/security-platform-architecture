@@ -24,3 +24,8 @@ desktop.ini
 # Python / Node accidental artifacts
 __pycache__/
 node_modules/
+
+# Guiones de presentacion (privados, fuera del repo)
+GUIA-PRESENTACION*.md
+GUION-PRESENTACION*.md
+

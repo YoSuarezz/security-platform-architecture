@@ -16,5 +16,3 @@ Documentos originales del proyecto. **No se editan in-place** salvo consolidaci�
 | Contenedores y componentes PEP/PDP | Diagramas C4 en `docs/03-architecture/c4/` |
 
 El Documento Base §11 agrupa algunos contextos; los diagramas de dominio los detallan en **11 contextos**. No contradicen el stack ni los principios: refinan el mapa de dominio. Los Markdown derivados deben alinearse a esos diagramas.
-
-Para presentar 00–03 al evaluador: [`../GUIA-PRESENTACION-00-03.md`](../GUIA-PRESENTACION-00-03.md).

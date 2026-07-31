@@ -175,7 +175,6 @@ Plantillas para mantener consistencia entre documentos.
 | 01 Governance | ✅ Accepted (ADR-001…014 + glosario) |
 | 02 Domain | ✅ Accepted — orden `01`→`12` ([guía](docs/02-domain/README.md)) |
 | 03 Architecture | ✅ Accepted — C4, Deployment, Modulith |
-| Guía de presentación | [docs/GUIA-PRESENTACION-00-03.md](docs/GUIA-PRESENTACION-00-03.md) |
 | 04 Data | Pendiente (Fase 0.D) |
 | 05 Contracts | Pendiente (Fase 0.E) |
 | 06 Security | Pendiente (Fase 0.F) |
